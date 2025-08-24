@@ -63,8 +63,8 @@ const TrendingMovies = ({ onTrailerClick }) => {
             <section className="trending-section mt-12">
                 <div className="flex justify-center items-center py-8">
                     <div className="text-center">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-light-100 mx-auto mb-4"></div>
-                        <p className="text-light-200">Loading {tabs.find(t => t.id === activeTab)?.label}...</p>
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-600 mx-auto mb-4"></div>
+                        <p className="text-gray-300">Loading {tabs.find(t => t.id === activeTab)?.label}...</p>
                     </div>
                 </div>
             </section>
@@ -85,7 +85,7 @@ const TrendingMovies = ({ onTrailerClick }) => {
                             className={`tab-button px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                                 activeTab === tab.id
                                     ? "active bg-gradient-to-r from-[#D6C7FF] to-[#AB8BFF] text-primary"
-                                    : "bg-dark-100 text-white hover:bg-light-100/10"
+                                    : "bg-gray-900 text-white hover:bg-blue-100/10"
                             }`}
                         >
                             {tab.label}
@@ -136,11 +136,11 @@ const TrendingMovies = ({ onTrailerClick }) => {
 
             {/* Quick Stats */}
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-dark-100/50 backdrop-blur-sm rounded-xl p-4 border border-light-100/10">
+                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-gray-600/10">
                     <div className="text-2xl font-bold text-white">
                         {movies.length}+
                     </div>
-                    <div className="text-light-200 text-sm">
+                    <div className="text-gray-300 text-sm">
                         {activeTab === 'trending' && 'Trending Movies'}
                         {activeTab === 'topRated' && 'Top Rated Movies'}
                         {activeTab === 'upcoming' && 'Upcoming Movies'}
@@ -148,19 +148,19 @@ const TrendingMovies = ({ onTrailerClick }) => {
                     </div>
                 </div>
                 
-                <div className="bg-dark-100/50 backdrop-blur-sm rounded-xl p-4 border border-light-100/10">
+                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-gray-600/10">
                     <div className="text-2xl font-bold text-white">
                         {activeTab === 'topRated' 
                             ? movies.filter(m => m.vote_average >= 8).length
                             : movies.filter(m => m.vote_average >= 7).length
                         }
                     </div>
-                    <div className="text-light-200 text-sm">
+                    <div className="text-gray-300 text-sm">
                         {activeTab === 'topRated' ? '8+ Rated' : 'Highly Rated'}
                     </div>
                 </div>
                 
-                <div className="bg-dark-100/50 backdrop-blur-sm rounded-xl p-4 border border-light-100/10">
+                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-gray-600/10">
                     <div className="text-2xl font-bold text-white">
                         {activeTab === 'upcoming' 
                             ? movies.filter(m => new Date(m.release_date) > new Date()).length
@@ -169,7 +169,7 @@ const TrendingMovies = ({ onTrailerClick }) => {
                             : new Date().getFullYear()
                         }
                     </div>
-                    <div className="text-light-200 text-sm">
+                    <div className="text-gray-300 text-sm">
                         {activeTab === 'upcoming' && 'Coming Soon'}
                         {activeTab === 'nowPlaying' && 'Currently Showing'}
                         {(activeTab === 'trending' || activeTab === 'topRated') && 'Latest Releases'}

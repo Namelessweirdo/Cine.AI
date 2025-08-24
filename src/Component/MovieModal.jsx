@@ -61,7 +61,7 @@ const MovieModal = ({ movie, isOpen, onClose }) => {
 
     return (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-dark-100 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
                 {/* Header */}
                 <div className="relative">
                     <button
@@ -85,14 +85,14 @@ const MovieModal = ({ movie, isOpen, onClose }) => {
                             alt={movie.title}
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-dark-100 via-transparent to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
                         
                         {/* Movie Info Overlay */}
                         <div className="absolute bottom-0 left-0 right-0 p-6">
                             <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
                                 {movie.title}
                             </h1>
-                            <div className="flex items-center gap-4 text-light-200">
+                            <div className="flex items-center gap-4 text-gray-300">
                                 <span>{movie.release_date?.split('-')[0]}</span>
                                 <span>•</span>
                                 <span>{movie.original_language?.toUpperCase()}</span>
@@ -111,7 +111,7 @@ const MovieModal = ({ movie, isOpen, onClose }) => {
                 <div className="p-6">
                     {loading ? (
                         <div className="flex justify-center items-center py-8">
-                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-light-100"></div>
+                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-600"></div>
                         </div>
                     ) : (
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -131,21 +131,21 @@ const MovieModal = ({ movie, isOpen, onClose }) => {
                                     <button className="w-full bg-gradient-to-r from-[#D6C7FF] to-[#AB8BFF] text-primary font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity">
                                         Add to Watchlist
                                     </button>
-                                    <button className="w-full bg-light-100/10 text-white py-3 rounded-lg hover:bg-light-100/20 transition-colors">
+                                    <button className="w-full bg-blue-100/10 text-white py-3 rounded-lg hover:bg-blue-100/20 transition-colors">
                                         Share Movie
                                     </button>
                                 </div>
 
                                 {/* Rating */}
-                                <div className="mt-4 p-4 bg-light-100/5 rounded-lg">
+                                <div className="mt-4 p-4 bg-blue-100/5 rounded-lg">
                                     <div className="flex items-center gap-2 mb-2">
                                         <img src="/star.svg" alt="Star" className="w-5 h-5" />
                                         <span className="text-xl font-bold text-white">
                                             {movie.vote_average?.toFixed(1) || 'N/A'}
                                         </span>
-                                        <span className="text-light-200">/ 10</span>
+                                        <span className="text-gray-300">/ 10</span>
                                     </div>
-                                    <p className="text-sm text-light-200">
+                                    <p className="text-sm text-gray-300">
                                         {movie.vote_count} votes
                                     </p>
                                 </div>
@@ -156,7 +156,7 @@ const MovieModal = ({ movie, isOpen, onClose }) => {
                                 {/* Overview */}
                                 <div>
                                     <h3 className="text-xl font-semibold text-white mb-3">Overview</h3>
-                                    <p className="text-light-200 leading-relaxed">
+                                    <p className="text-gray-300 leading-relaxed">
                                         {movie.overview || "No overview available."}
                                     </p>
                                 </div>
@@ -172,7 +172,7 @@ const MovieModal = ({ movie, isOpen, onClose }) => {
                                                     {movieDetails.genres.map(genre => (
                                                         <span
                                                             key={genre.id}
-                                                            className="px-3 py-1 bg-light-100/10 text-white text-sm rounded-full"
+                                                            className="px-3 py-1 bg-blue-100/10 text-white text-sm rounded-full"
                                                         >
                                                             {genre.name}
                                                         </span>
@@ -197,7 +197,7 @@ const MovieModal = ({ movie, isOpen, onClose }) => {
                                                                 className="w-16 h-16 rounded-full object-cover mx-auto mb-2"
                                                             />
                                                             <p className="text-sm text-white font-medium">{person.name}</p>
-                                                            <p className="text-xs text-light-200">{person.character}</p>
+                                                            <p className="text-xs text-gray-300">{person.character}</p>
                                                         </div>
                                                     ))}
                                                 </div>
@@ -206,9 +206,9 @@ const MovieModal = ({ movie, isOpen, onClose }) => {
 
                                         {/* Additional Info */}
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                            <div className="bg-light-100/5 p-4 rounded-lg">
+                                            <div className="bg-blue-100/5 p-4 rounded-lg">
                                                 <h4 className="font-semibold text-white mb-2">Production Details</h4>
-                                                <div className="space-y-2 text-sm text-light-200">
+                                                <div className="space-y-2 text-sm text-gray-300">
                                                     <div>
                                                         <span className="font-medium">Budget: </span>
                                                         {formatBudget(movieDetails.budget)}
@@ -224,9 +224,9 @@ const MovieModal = ({ movie, isOpen, onClose }) => {
                                                 </div>
                                             </div>
 
-                                            <div className="bg-light-100/5 p-4 rounded-lg">
+                                            <div className="bg-blue-100/5 p-4 rounded-lg">
                                                 <h4 className="font-semibold text-white mb-2">Release Info</h4>
-                                                <div className="space-y-2 text-sm text-light-200">
+                                                <div className="space-y-2 text-sm text-gray-300">
                                                     <div>
                                                         <span className="font-medium">Release Date: </span>
                                                         {movieDetails.release_date ? new Date(movieDetails.release_date).toLocaleDateString() : 'N/A'}

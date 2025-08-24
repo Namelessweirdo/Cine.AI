@@ -30,7 +30,7 @@ const MovieCard = ({ movie, viewMode = "grid", onTrailerClick }) => {
 
     if (viewMode === "list") {
         return (
-            <div className="movie-card-list bg-dark-100 p-4 rounded-xl shadow-inner shadow-light-100/10">
+            <div className="movie-card-list bg-gray-900 p-4 rounded-xl shadow-inner shadow-blue-100/10">
                 <div className="flex gap-4">
                     <img
                         src={poster_path ?
@@ -63,7 +63,7 @@ const MovieCard = ({ movie, viewMode = "grid", onTrailerClick }) => {
                         <div className="flex gap-2">
                             <button
                                 onClick={() => setShowDetails(!showDetails)}
-                                className="text-light-200 hover:text-white text-sm underline"
+                                className="text-gray-300 hover:text-white text-sm underline"
                             >
                                 {showDetails ? 'Show less' : 'Show more details'}
                             </button>
@@ -80,7 +80,7 @@ const MovieCard = ({ movie, viewMode = "grid", onTrailerClick }) => {
                         </div>
                         
                         {showDetails && (
-                            <div className="mt-3 p-3 bg-light-100/5 rounded-lg">
+                            <div className="mt-3 p-3 bg-blue-100/5 rounded-lg">
                                 <p className="text-gray-300 text-sm">{overview}</p>
                             </div>
                         )}
@@ -149,7 +149,7 @@ const MovieCard = ({ movie, viewMode = "grid", onTrailerClick }) => {
                 
                 {/* Quick actions */}
                 <div className="mt-3 flex gap-2">
-                    <button className="flex-1 bg-light-100/10 text-white text-sm py-2 rounded-lg hover:bg-light-100/20 transition-colors">
+                    <button className="flex-1 bg-blue-100/10 text-white text-sm py-2 rounded-lg hover:bg-blue-100/20 transition-colors">
                         Add to Watchlist
                     </button>
                     <button 

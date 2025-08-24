@@ -107,9 +107,9 @@ const TrailerModal = ({ movie, isOpen, onClose }) => {
 
     return (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-dark-100 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-gray-900 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
                 {/* Header */}
-                <div className="relative p-6 border-b border-light-100/10">
+                <div className="relative p-6 border-b border-gray-600/10">
                     <button
                         onClick={onClose}
                         className="absolute top-6 right-6 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
@@ -132,7 +132,7 @@ const TrailerModal = ({ movie, isOpen, onClose }) => {
                             <h1 className="text-2xl font-bold text-white mb-2">
                                 {movie.title} - Trailers
                             </h1>
-                            <p className="text-light-200">
+                            <p className="text-gray-300">
                                 Watch official trailers and previews
                             </p>
                         </div>
@@ -143,21 +143,21 @@ const TrailerModal = ({ movie, isOpen, onClose }) => {
                 <div className="p-6">
                     {loading ? (
                         <div className="flex justify-center items-center py-12">
-                            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-light-100"></div>
+                            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-600"></div>
                         </div>
                     ) : error ? (
                         <div className="text-center py-12">
                             <div className="text-red-400 text-xl mb-4">⚠️ {error}</div>
                             <button
                                 onClick={searchYouTubeTrailers}
-                                className="bg-light-100/10 text-white px-6 py-3 rounded-lg hover:bg-light-100/20 transition-colors"
+                                className="bg-blue-100/10 text-white px-6 py-3 rounded-lg hover:bg-blue-100/20 transition-colors"
                             >
                                 Try Again
                             </button>
                         </div>
                     ) : trailers.length === 0 ? (
                         <div className="text-center py-12">
-                            <div className="text-light-200 text-xl mb-4">No trailers found</div>
+                            <div className="text-gray-300 text-xl mb-4">No trailers found</div>
                             <p className="text-gray-400">Try searching for this movie on YouTube</p>
                         </div>
                     ) : (
@@ -182,7 +182,7 @@ const TrailerModal = ({ movie, isOpen, onClose }) => {
                                         <h3 className="text-xl font-semibold text-white mb-2">
                                             {selectedTrailer.title}
                                         </h3>
-                                        <div className="flex items-center gap-2 text-light-200">
+                                        <div className="flex items-center gap-2 text-gray-300">
                                             <span>Source: {selectedTrailer.site}</span>
                                             <span>•</span>
                                             <span>Official Trailer</span>
@@ -219,11 +219,11 @@ const TrailerModal = ({ movie, isOpen, onClose }) => {
                                                 </svg>
                                             </div>
                                         </div>
-                                        <div className="p-3 bg-light-100/5">
+                                        <div className="p-3 bg-blue-100/5">
                                             <p className="text-white text-sm font-medium line-clamp-2">
                                                 {trailer.title}
                                             </p>
-                                            <p className="text-light-200 text-xs mt-1">
+                                            <p className="text-gray-300 text-xs mt-1">
                                                 {trailer.site}
                                             </p>
                                         </div>
@@ -235,8 +235,8 @@ const TrailerModal = ({ movie, isOpen, onClose }) => {
                 </div>
 
                 {/* Footer Actions */}
-                <div className="p-6 border-t border-light-100/10 flex justify-between items-center">
-                    <div className="text-light-200 text-sm">
+                <div className="p-6 border-t border-gray-600/10 flex justify-between items-center">
+                    <div className="text-gray-300 text-sm">
                         {trailers.length > 0 && (
                             <>Click on any trailer thumbnail to watch</>
                         )}
@@ -245,7 +245,7 @@ const TrailerModal = ({ movie, isOpen, onClose }) => {
                     <div className="flex gap-3">
                         <button
                             onClick={onClose}
-                            className="px-6 py-2 bg-light-100/10 text-white rounded-lg hover:bg-light-100/20 transition-colors"
+                            className="px-6 py-2 bg-blue-100/10 text-white rounded-lg hover:bg-blue-100/20 transition-colors"
                         >
                             Close
                         </button>

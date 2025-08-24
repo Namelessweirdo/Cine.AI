@@ -56,9 +56,9 @@ const Search = ({ searchTerm, setSearchTerm }) => {
                 {isTyping && inputValue && (
                     <div className="absolute right-12 top-1/2 transform -translate-y-1/2">
                         <div className="flex space-x-1">
-                            <div className="w-1 h-1 bg-light-200 rounded-full animate-pulse"></div>
-                            <div className="w-1 h-1 bg-light-200 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                            <div className="w-1 h-1 bg-light-200 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                            <div className="w-1 h-1 bg-gray-400 rounded-full animate-pulse"></div>
+                            <div className="w-1 h-1 bg-gray-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                            <div className="w-1 h-1 bg-gray-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
                         </div>
                     </div>
                 )}

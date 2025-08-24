@@ -177,17 +177,17 @@ function App() {
 
     if (!API_KEY) {
         return (
-            <div className="min-h-screen bg-dark-100 flex items-center justify-center">
+            <div className="min-h-screen bg-gray-900 flex items-center justify-center">
                 <div className="text-center text-white">
                     <h1 className="text-2xl font-bold mb-4">API Key Missing</h1>
-                    <p className="text-light-200">Please add your TMDB API key to the .env file</p>
+                    <p className="text-gray-300">Please add your TMDB API key to the .env file</p>
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="min-h-screen bg-dark-100 text-white">
+        <div className="min-h-screen bg-gray-900 text-white">
             {/* Header with Auth */}
             <header className="relative">
                 <img src="./BG-1.png" alt="Hero Banner" />
@@ -217,9 +217,9 @@ function App() {
                     <div className="mt-8 search-results">
                         {loading ? (
                             <div className="text-center py-8">
-                                <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-light-100 mx-auto mb-4"></div>
-                                <p className="text-light-200 text-lg">Searching for movies...</p>
-                                <p className="text-light-200/70">"{search}"</p>
+                                <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-gray-600 mx-auto mb-4"></div>
+                                <p className="text-gray-300 text-lg">Searching for movies...</p>
+                                <p className="text-gray-300/70">"{search}"</p>
                             </div>
                         ) : errorMessage ? (
                             <div className="text-center py-8">
@@ -227,7 +227,7 @@ function App() {
                                 <p className="text-red-400 text-xl mb-4">{errorMessage}</p>
                                 <button
                                     onClick={clearFilters}
-                                    className="bg-light-100/10 text-white px-6 py-3 rounded-lg hover:bg-light-100/20 transition-colors"
+                                    className="bg-blue-100/10 text-white px-6 py-3 rounded-lg hover:bg-blue-100/20 transition-colors"
                                 >
                                     Reset Search
                                 </button>
@@ -236,11 +236,11 @@ function App() {
                             <div className="space-y-6">
                                 {/* Search Results Header */}
                                 <div className="text-center">
-                                    <div className="inline-flex items-center gap-4 bg-gradient-to-r from-light-100/10 to-light-100/5 px-8 py-6 rounded-2xl border border-light-100/20 search-status">
+                                    <div className="inline-flex items-center gap-4 bg-gradient-to-r from-blue-100/10 to-blue-100/5 px-8 py-6 rounded-2xl border border-gray-600/20 search-status">
                                         <div className="text-3xl animate-pulse">🎬</div>
                                         <div>
                                             <h3 className="text-white text-xl font-semibold mb-1">Search Results</h3>
-                                            <p className="text-light-200">Found {movieList.length} movie{movieList.length !== 1 ? 's' : ''} for "{search}"</p>
+                                            <p className="text-gray-300">Found {movieList.length} movie{movieList.length !== 1 ? 's' : ''} for "{search}"</p>
                                         </div>
                                     </div>
                                 </div>
@@ -249,7 +249,7 @@ function App() {
                                 <div>
                                     <div className="flex items-center justify-between mb-6">
                                         <h2 className="text-2xl font-bold text-white">Results for "{search}"</h2>
-                                        <span className="text-light-200 bg-light-100/10 px-3 py-2 rounded-lg">
+                                        <span className="text-gray-300 bg-blue-100/10 px-3 py-2 rounded-lg">
                                             {movieList.length} movie{movieList.length !== 1 ? 's' : ''} found
                                         </span>
                                     </div>
@@ -258,7 +258,7 @@ function App() {
                                         {movieList.map((movie, index) => (
                                             <div 
                                                 key={movie.id} 
-                                                className="animate-fade-in"
+                                                className="fade-in"
                                                 style={{ 
                                                     animationDelay: `${index * 100}ms`,
                                                     animationFillMode: 'both'
@@ -277,7 +277,7 @@ function App() {
                                     <div className="mt-8 text-center">
                                         <button
                                             onClick={clearFilters}
-                                            className="bg-light-100/10 text-white px-6 py-3 rounded-lg hover:bg-light-100/20 transition-colors"
+                                            className="bg-blue-100/10 text-white px-6 py-3 rounded-lg hover:bg-blue-100/20 transition-colors"
                                         >
                                             Clear Search & Show All Movies
                                         </button>
@@ -286,12 +286,12 @@ function App() {
                             </div>
                         ) : (
                             <div className="text-center py-8">
-                                <div className="text-light-200 text-6xl mb-4">🔍</div>
-                                <p className="text-light-200 text-xl mb-4">No movies found for "{search}"</p>
-                                <p className="text-light-200/70 mb-4">Try a different search term</p>
+                                <div className="text-gray-300 text-6xl mb-4">🔍</div>
+                                <p className="text-gray-300 text-xl mb-4">No movies found for "{search}"</p>
+                                <p className="text-gray-300/70 mb-4">Try a different search term</p>
                                 <button
                                     onClick={clearFilters}
-                                    className="bg-light-100/10 text-white px-6 py-3 rounded-lg hover:bg-light-100/20 transition-colors"
+                                    className="bg-blue-100/10 text-white px-6 py-3 rounded-lg hover:bg-blue-100/20 transition-colors"
                                 >
                                     Clear Search
                                 </button>
@@ -314,7 +314,7 @@ function App() {
                                     className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
                                         selectedGenres.includes(genre.id)
                                             ? "bg-gradient-to-r from-[#D6C7FF] to-[#AB8BFF] text-primary"
-                                            : "bg-dark-200 text-light-200 hover:bg-light-100/10"
+                                            : "bg-gray-800 text-gray-300 hover:bg-blue-100/10"
                                     }`}
                                 >
                                     {genre.name}
@@ -327,7 +327,7 @@ function App() {
                             <select
                                 value={sortBy}
                                 onChange={(e) => setSortBy(e.target.value)}
-                                className="bg-dark-200 text-white px-3 py-2 rounded-lg border border-light-100/20 focus:outline-none focus:ring-2 focus:ring-light-100/50"
+                                className="bg-gray-800 text-white px-3 py-2 rounded-lg border border-gray-600/20 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
                             >
                                 <option value="popularity.desc">Most Popular</option>
                                 <option value="vote_average.desc">Highest Rated</option>
@@ -337,13 +337,13 @@ function App() {
                                 <option value="title.desc">Z-A</option>
                             </select>
 
-                            <div className="flex bg-dark-200 rounded-lg p-1 border border-light-100/20">
+                            <div className="flex bg-gray-800 rounded-lg p-1 border border-gray-600/20">
                                 <button
                                     onClick={() => setViewMode("grid")}
                                     className={`p-2 rounded transition-colors ${
                                         viewMode === "grid"
-                                            ? "bg-light-100/20 text-white"
-                                            : "text-light-200 hover:text-white"
+                                            ? "bg-blue-100/20 text-white"
+                                            : "text-gray-300 hover:text-white"
                                     }`}
                                 >
                                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -354,8 +354,8 @@ function App() {
                                     onClick={() => setViewMode("list")}
                                     className={`p-2 rounded transition-colors ${
                                         viewMode === "list"
-                                            ? "bg-light-100/20 text-white"
-                                            : "text-light-200 hover:text-white"
+                                            ? "bg-blue-100/20 text-white"
+                                            : "text-gray-300 hover:text-white"
                                     }`}
                                 >
                                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -367,7 +367,7 @@ function App() {
                             {selectedGenres.length > 0 && (
                                 <button
                                     onClick={clearFilters}
-                                    className="text-light-200 hover:text-white transition-colors"
+                                    className="text-gray-300 hover:text-white transition-colors"
                                 >
                                     Clear Filters
                                 </button>
@@ -383,7 +383,7 @@ function App() {
                     <>
                         <div className="flex items-center justify-between mb-6">
                             <h2 className="text-2xl font-bold text-white">All Movies</h2>
-                            <span className="text-light-200 bg-light-100/10 px-3 py-2 rounded-lg">
+                            <span className="text-gray-300 bg-blue-100/10 px-3 py-2 rounded-lg">
                                 {movieList.length} movie{movieList.length !== 1 ? 's' : ''} found
                             </span>
                         </div>

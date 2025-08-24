@@ -95,14 +95,14 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
 
     return (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-dark-100 border border-light-100/20 rounded-2xl p-8 max-w-md w-full shadow-2xl">
+            <div className="bg-gray-900 border border-gray-600/20 rounded-2xl p-8 max-w-md w-full shadow-2xl">
                 {/* Header */}
                 <div className="text-center mb-8">
                     <div className="text-4xl mb-4">🎬</div>
                     <h2 className="text-2xl font-bold text-white mb-2">
                         {isLogin ? 'Welcome Back!' : 'Join MovieDiscover'}
                     </h2>
-                    <p className="text-light-200">
+                    <p className="text-gray-300">
                         {isLogin 
                             ? 'Sign in to access your personalized movie experience' 
                             : 'Create an account to start discovering amazing movies'
@@ -122,7 +122,7 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
                                 name="username"
                                 value={formData.username}
                                 onChange={handleInputChange}
-                                className="w-full px-4 py-3 bg-dark-200 border border-light-100/20 rounded-lg text-white placeholder-light-200/50 focus:outline-none focus:ring-2 focus:ring-light-100/50 focus:border-transparent transition-all"
+                                className="w-full px-4 py-3 bg-gray-800 border border-gray-600/20 rounded-lg text-white placeholder-gray-400/50 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all"
                                 placeholder="Enter your username"
                                 required={!isLogin}
                             />
@@ -138,7 +138,7 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
                             name="email"
                             value={formData.email}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 bg-dark-200 border border-light-100/20 rounded-lg text-white placeholder-light-200/50 focus:outline-none focus:ring-2 focus:ring-light-100/50 focus:border-transparent transition-all"
+                            className="w-full px-4 py-3 bg-gray-800 border border-gray-600/20 rounded-lg text-white placeholder-gray-400/50 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all"
                             placeholder="Enter your email"
                             required
                         />
@@ -153,7 +153,7 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
                             name="password"
                             value={formData.password}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 bg-dark-200 border border-light-100/20 rounded-lg text-white placeholder-light-200/50 focus:outline-none focus:ring-2 focus:ring-light-100/50 focus:border-transparent transition-all"
+                            className="w-full px-4 py-3 bg-gray-800 border border-gray-600/20 rounded-lg text-white placeholder-gray-400/50 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all"
                             placeholder="Enter your password"
                             required
                         />
@@ -169,7 +169,7 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
                                 name="confirmPassword"
                                 value={formData.confirmPassword}
                                 onChange={handleInputChange}
-                                className="w-full px-4 py-3 bg-dark-200 border border-light-100/20 rounded-lg text-white placeholder-light-200/50 focus:outline-none focus:ring-2 focus:ring-light-100/50 focus:border-transparent transition-all"
+                                className="w-full px-4 py-3 bg-gray-800 border border-gray-600/20 rounded-lg text-white placeholder-gray-400/50 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all"
                                 placeholder="Confirm your password"
                                 required={!isLogin}
                             />
@@ -202,11 +202,11 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
 
                 {/* Toggle Mode */}
                 <div className="text-center mt-6">
-                    <p className="text-light-200">
+                    <p className="text-gray-300">
                         {isLogin ? "Don't have an account?" : "Already have an account?"}
                         <button
                             onClick={toggleMode}
-                            className="text-light-100 hover:text-white font-medium ml-1 transition-colors"
+                            className="text-blue-100 hover:text-white font-medium ml-1 transition-colors"
                         >
                             {isLogin ? 'Sign Up' : 'Sign In'}
                         </button>
@@ -216,7 +216,7 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 text-light-200 hover:text-white transition-colors"
+                    className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"
                 >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -224,22 +224,22 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
                 </button>
 
                 {/* Features Preview */}
-                <div className="mt-8 pt-6 border-t border-light-100/20">
+                <div className="mt-8 pt-6 border-t border-gray-600/20">
                     <h3 className="text-white font-semibold mb-3 text-center">Unlock These Features:</h3>
                     <div className="grid grid-cols-2 gap-3 text-sm">
-                        <div className="flex items-center text-light-200">
+                        <div className="flex items-center text-gray-300">
                             <span className="text-green-400 mr-2">✓</span>
                             Personal Watchlist
                         </div>
-                        <div className="flex items-center text-light-200">
+                        <div className="flex items-center text-gray-300">
                             <span className="text-green-400 mr-2">✓</span>
                             Search History
                         </div>
-                        <div className="flex items-center text-light-200">
+                        <div className="flex items-center text-gray-300">
                             <span className="text-green-400 mr-2">✓</span>
                             Movie Ratings
                         </div>
-                        <div className="flex items-center text-light-200">
+                        <div className="flex items-center text-gray-300">
                             <span className="text-green-400 mr-2">✓</span>
                             Smart Recommendations
                         </div>
