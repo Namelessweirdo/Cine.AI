@@ -277,7 +277,7 @@ If you find Cine-AI helpful, please consider:
 
 ---
 
-**Made with ❤️ by [Frank20021](https://github.com/Frank20021), [TechAfranie-X](https://github.com/TechAfranie-X)]**
+**Made with ❤️ by [Frank20021](https://github.com/Frank20021), [TechAfranie-X](https://github.com/TechAfranie-X) and [Namelessweirdo](https://github.com/namelessweirdo)**
 
 **Cine-AI** - Making movie discovery simple, smart, and enjoyable! 🎬✨
 
